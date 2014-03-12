@@ -69,7 +69,7 @@ class Scraping_Code_Form extends Scraping_Code {
 								
 								$form_name_values[] = $this->getFormNameValue($input_name, $input_value);
 									
-							} else if($input_type == 'checkbox' && $this->isSelected($input_tag)) {
+							} else if($input_type == 'checkbox' && $this->isChecked($input_tag)) {
 								
 								$form_name_values[] = $this->getFormNameValue($input_name, $input_value);
 								
