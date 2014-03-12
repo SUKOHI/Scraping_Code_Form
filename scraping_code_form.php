@@ -4,7 +4,7 @@
 
 class Scraping_Code_Form extends Scraping_Code {
 	
-	public function getFormValues() {
+	public function getFormValues($target_form_name='') {
 		
 		$form_name_values_data = array();
 		$subject = $this->getSubject();
@@ -161,6 +161,13 @@ class Scraping_Code_Form extends Scraping_Code {
 			}
 			
 			$this->setSubject($subject);
+			
+			if($target_form_name != '') {
+				
+				return $form_name_values_data[$target_form_name];
+				
+			}
+			
 			return $form_name_values_data;
 		
 		}
@@ -226,7 +233,7 @@ class Scraping_Code_Form extends Scraping_Code {
 	$sc = new Scraping_Code_Form();
 	
 	$sc->setSubject($subject);
-	$form_values = $sc->getFormValues();
+	$form_values = $sc->getFormValues('target_form_name_or_number');	// or Get All =>  $sc->getFormValues();
 	print_r($form_values);
 
 ***/
